@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telugu Mood Songs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="falling-flowers"></div>
+    
+    <h1><mark>Heii ppl, Welcome! Let's Listen Songs 🎶</mark></h1>
+    <div class="container">
+        <button id="listenBtn">Listen</button>
+        <div id="genreSelection" class="hidden">
+            <button onclick="showSongs('happy')">Happy 😊</button>
+            <button onclick="showSongs('sad')">Sad 😢</button>
+            <button onclick="showSongs('energetic')">Energetic 🔥</button>
+            <button onclick="showSongs('relaxing')">Relaxing 😌</button>
+            <button onclick="showSongs('romantic')">Romantic 💖</button>
+        </div>
+        <div id="songsList" class="hidden"></div>
+
+       
+        <p>Listen on Spotify</p>
+        <a href="https://open.spotify.com/playlist/37i9dQZF1DWWwrjLPC16W7" target="_blank" class="spotify-btn">
+            <img src="spotify.png" alt="Spotify"> Spotify
+        </a>
+        
+        <p>Listen on JioSaavn</p>
+        <a href="https://www.jiosaavn.com/featured-playlists/telugu" target="_blank" class="jiosaavn-btn">
+            <img src="jiosaavan.png" alt="JioSaavn"> JioSaavn
+        </a>
+    </div>
+
+    <script>
+        document.getElementById('listenBtn').addEventListener('click', function() {
+            document.getElementById('genreSelection').classList.remove('hidden');
+        });
+
+        const songData = {
+            happy: [
+                { name: "Nee Kannu Neeli Samudhram", url: "https://youtu.be/mrqgz4_a4PU?feature=shared" },
+                { name: "Chusi Chudangane", url: "https://youtu.be/_JVghQCWnRI?feature=shared" },
+                { name: "Kanulanu Thaake", url: "https://youtu.be/30Bjg_7KuoE?feature=shared" }
+            ],
+            
+            sad: [
+                { name: "Nammaka Thappani", url: "https://youtu.be/OpNrsHEWfjE?feature=shared" },
+                { name: "Adiga Adiga", url: "https://youtu.be/hJ4OL9NNeDY?feature=shared" },
+                { name: "Emaipoyave", url: "https://youtu.be/Eyx0Hvi1_Ng?feature=shared" }
+            ],
+            energetic: [
+                { name: "Rowdy Baby", url: "https://youtu.be/yUoC5stm05o?feature=shared" },
+                { name: "Dimaak Kharaab", url: "https://youtu.be/V5c4BnmPTpU?feature=shared" },
+                { name: "Reddy Ikkada Soodu", url: "https://youtu.be/pKguNINOFGM?feature=shared" }
+            ],
+            relaxing: [
+                { name: "Samajavaragamana", url: "https://youtu.be/tflQ33g6I8I?feature=shared" },
+                { name: "Vinnane Vinnane", url: "https://youtu.be/J2whskXsZe8?feature=shared" },
+                { name: "Prema Velluva", url: "https://youtu.be/rslYbT2GvRs?feature=shared" }
+            ],
+            romantic: [
+                { name: "Urike Urike", url: "https://youtu.be/A3Im3P0--aE?feature=shared" },
+                { name: "Mellaga Karagani", url: "https://youtu.be/TBX-PJyifts?feature=shared" },
+                { name: "Undiporaadhey", url: "https://youtu.be/jlmyZ_x5vjc?feature=shared" }
+            ]
+        };
+
+        function showSongs(mood) {
+            let songListDiv = document.getElementById('songsList');
+            songListDiv.innerHTML = "";
+            songData[mood].forEach(song => {
+                let songItem = document.createElement('div');
+                songItem.innerHTML = `<p>${song.name}</p><button onclick="playSong('${song.url}')">Play Song</button>`;
+                songListDiv.appendChild(songItem);
+            });
+            songListDiv.classList.remove('hidden');
+        }
+
+        function playSong(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: url('music.pro.jpg') no-repeat center center/cover;
+    color: #fff;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Falling Flowers Animation */
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+.falling-flowers {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.falling-flowers::before,
+.falling-flowers::after {
+    content: "❄️";
+    position: absolute;
+    font-size: 30px;
+    opacity: 0.7;
+    animation: fall 5s linear infinite;
+}
+
+.falling-flowers::before {
+    left: 20%;
+    animation-duration: 4s;
+}
+
+.falling-flowers::after {
+    right: 20%;
+    animation-duration: 6s;
+}
+
+/* Container */
+.container {
+    margin-top: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #ff6f61;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff4136;
+}
+
+.hidden { 
+    display: none; 
+}
+
+.song-item {
+    margin-top: 20px;
+}
+
+/* Spotify & JioSaavn Buttons */
+.spotify-btn, .jiosaavn-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.spotify-btn {
+    background: #1DB954;
+}
+
+.jiosaavn-btn {
+    background: #00A0E3;
+}
+
+.spotify-btn img, .jiosaavn-btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
