@@ -9,7 +9,6 @@ body {
     overflow: hidden;
 }
 
-/* Falling Flowers Animation */
 @keyframes fall {
     0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
     100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
@@ -43,7 +42,6 @@ body {
     animation-duration: 6s;
 }
 
-/* Container */
 .container {
     margin-top: 50px;
     background: rgba(0, 0, 0, 0.7);
@@ -75,8 +73,6 @@ button:hover {
 .song-item {
     margin-top: 20px;
 }
-
-/* Spotify & JioSaavn Buttons */
 .spotify-btn, .jiosaavn-btn {
     display: inline-flex;
     align-items: center;
